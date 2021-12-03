@@ -7,21 +7,21 @@ export default class Header extends React.Component {
 
     handleKeyUp=(event)=>{
         const {keyCode,target} = event;
-        if (keyCode !==13) return 
+        if (keyCode !==13) return ;
         if(target.value.trim() ==""){
             alert("Todo can not be empty")
         } else{
             const todoObj={id:nanoid(),name:target.value,done:false};
             this.props.addTodo(todoObj)
         }
-        target.value =""
+        target.value ="";
     }
 
     render() {
         return (
             <div className="todo_header">
                 <h2>Todo List</h2>
-                <input onKeyUp={this.handleKeyUp} type="text" id="newTodo" placeholder="Please write a new todo and ENTER"/>
+                <input onKeyUp={this.handleKeyUp} type="text" id="newTodo" placeholder="Please write a new todo and push ENTER"/>
             </div>
         )
     }

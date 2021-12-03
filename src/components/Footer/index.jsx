@@ -2,12 +2,35 @@ import React from 'react';
 import "./index.css"
 
 export default class Footer extends React.Component {
+
+    handleCheckAll=(event)=>{
+        this.props.checkAllTodo(event.target.checked)
+    }
+
+    deleteAllDone=()=>{
+        this.props.deleteAllDoneTodo()
+    }
+
     render() {
+        const {todos}=this.props;
+        let allTodos = todos.length;
+        let doneTodos = todos.reduce((pre,todo)=>{
+            if(todo.done===true){
+                return pre+1
+            }else{
+                return pre+0
+            }
+        },0)
+
         return (
             <div className="todo_footer">
-                <input type="checkbox" defaultChecked="false"/>
-                <span> All 2  /  Done  1</span>
-                <button className="todo_btn">Delete All Done</button>
+                <label>
+                    <input type="checkbox" onChange={this.handleCheckAll} checked={doneTodos ===allTodos && allTodos!==0 ? true : false}/>
+                </label>
+                <span>
+                 <span className="footer_info"> Done {doneTodos}  / All {allTodos} </span>
+                </span>
+                <button onClick={this.deleteAllDone} className="todo_btn">Clear All Done</button>
             </div>
         )
     }

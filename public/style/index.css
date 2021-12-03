@@ -14,15 +14,17 @@ body {
 }
 
 .todo_btn {
-	color: #f8f9fa;
+	color: #013a63;
 	display: inline-block;
 	text-align: center;
 	font-size: 15px;
 	border-radius: 5px;
-	border: 1px solid #f94144;
-	background-color: #e63946;
+	border: 1px solid #013a63;
+	background-color: #e5e5e5;
 }
 
 .todo_btn:hover {
-	background-color: #ff4d6d;
+	background-color: #e5e5e5;
+	color: #f94144;
+	border: 1px solid #f94144;
 }
