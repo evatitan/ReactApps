@@ -1,12 +1,15 @@
 {
-  "name": "todo_list",
+  "name": "reactapps",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
     "nanoid": "^3.1.30",
+    "prop-types": "^15.7.2",
+    "pubsub-js": "^1.9.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
