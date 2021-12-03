@@ -11,8 +11,6 @@ export default class Item extends React.Component {
         }
     }
 
-
-
     render() {
         const {mouse}= this. state
         const {id, name, done}= this.props

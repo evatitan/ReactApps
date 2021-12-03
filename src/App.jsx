@@ -10,12 +10,21 @@ export default class App extends React.Component {
         {id:"002",name:"Learn Angular", done:true},
         {id:"003",name:"Learn Vue", done:false},
     ]}
+
+    addTodo=(todoObj)=>{
+        const {todos}=this.state;
+        const newTodos=[todoObj,...todos]
+        this.setState({todos:newTodos})
+    }
+
+
+
     render() {
         const {todos}=this.state
         return (
             <div className="todo_container">
                 <div className="todo_wrap">
-                  <Header />
+                  <Header todos={todos} addTodo={this.addTodo}/>
                   <List todos={todos}/>
                   <Footer />
                 </div>
