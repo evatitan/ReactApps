@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import "./index.css"
 
 export default class Item extends React.Component {
 
     state={mouse:false}
+
+    static propTypes={
+        updateTodo:PropTypes.func.isRequired,
+        deleteTodo:PropTypes.func.isRequired,
+        id:PropTypes.string.isRequired,
+        name:PropTypes.string.isRequired,
+        done:PropTypes.bool.isRequired
+    }
 
     handleMouse=(flag)=>{
         return ()=>{
@@ -25,7 +34,7 @@ export default class Item extends React.Component {
     }
 
     render() {
-        const {mouse}= this. state
+        const {mouse}= this.state
         const {id, name, done}= this.props
         return (
                 <li className="todo_item" onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)} >
