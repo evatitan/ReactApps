@@ -6,9 +6,17 @@ export default class Item extends React.Component {
 
     handleMouse=(flag)=>{
         return ()=>{
-            console.log(flag);
+            //console.log(flag);
             this.setState({mouse:flag})
         }
+    }
+
+    handleUpdate=(id)=>{
+        return(event)=>{
+            console.log(event.target.checked)
+            this.props.updateTodo(id,event.target.checked)
+        }
+
     }
 
     render() {
@@ -17,7 +25,7 @@ export default class Item extends React.Component {
         return (
             <div>
                 <li style={{backgroundColor: mouse? "#ced4da" : "#e5e5e5"}} className="todo_item" onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)} >
-                    <input type="checkbox" defaultChecked={done}/>
+                    <input type="checkbox" checked={done} onChange={this.handleUpdate(id)}/>
                     <span>{name}</span>
                     <button className="todo_btn" style={{display: mouse? "block" : "none"}}>Delete</button>
                 </li>

@@ -17,6 +17,15 @@ export default class App extends React.Component {
         this.setState({todos:newTodos})
     }
 
+    updateTodo=(id,done)=>{
+        const {todos}=this.state;
+        const newTodos= todos.map((todoObj)=>{
+            if(todoObj.id===id) return {...todoObj,done}
+            else return todoObj
+        })
+        this.setState({todos:newTodos})
+    }
+
 
 
     render() {
@@ -25,7 +34,7 @@ export default class App extends React.Component {
             <div className="todo_container">
                 <div className="todo_wrap">
                   <Header todos={todos} addTodo={this.addTodo}/>
-                  <List todos={todos}/>
+                  <List todos={todos} updateTodo={this.updateTodo}/>
                   <Footer />
                 </div>
             </div>
