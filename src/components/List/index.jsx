@@ -4,9 +4,14 @@ import "./index.css";
 
 export default class List extends React.Component {
     render() {
+        const {todos}= this.props
         return (
             <ol className="todo_list">
-                <Item />
+                {
+                    todos.map((todoObj)=>{
+                        return <Item key={todoObj.id} {...todoObj}/>
+                    })
+                }
             </ol>
         )
     }

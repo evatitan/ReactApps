@@ -1,7 +1,7 @@
 .todo_item {
 	list-style: none;
 	height: 30px;
-	padding: 3px;
+	padding-top: 6px;
 }
 
 .todo_btn {
