@@ -1,27 +1,23 @@
-import React, { useState } from 'react';
-import Header from './components/Layout/Header';
-import Meals from './components/Meals/Meals';
-import Cart from './components/Cart/Cart';
-import CartProvider from './store/cartProvider';
+import React, { useState, Fragment } from 'react';
+import AddUser from './components/Users/AddUser';
+import UsersList from './components/Users/UsersList';
 
 function App() {
-	const [ cartIsShown, setCartShown ] = useState(false);
+	const [ usersList, setUsersList ] = useState([]);
 
-	const showCartHandler = () => {
-		setCartShown(true);
+	const addUserHandler = (name, age) => {
+		setUsersList((prevUsersList) => {
+			console.log(name, age);
+			console.log(prevUsersList);
+			return [ ...prevUsersList, { name, age, id: Math.random() } ];
+		});
 	};
 
-	const hideCartHandler = () => {
-		setCartShown(false);
-	};
 	return (
-		<CartProvider>
-			{cartIsShown && <Cart onClose={hideCartHandler} />}
-			<Header onShowCart={showCartHandler} />
-			<main>
-				<Meals />
-			</main>
-		</CartProvider>
+		<Fragment>
+			<AddUser onAddUser={addUserHandler} />
+			<UsersList users={usersList} />
+		</Fragment>
 	);
 }
 

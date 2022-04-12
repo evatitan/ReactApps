@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../UI/Button';
 import Card from '../UI/Card';
 import ErrorMadal from '../UI/ErrorModal';
+import Wrapper from '../Helpers/Wrapper';
 import classes from './AddUser.module.css';
 
 const AddUser = (props) => {
@@ -44,7 +45,7 @@ const AddUser = (props) => {
 	};
 
 	return (
-		<React.Fragment>
+		<Wrapper>
 			{error && <ErrorMadal title={error.title} message={error.message} onConfirm={errorHandler} />}
 			{/* Card component is the son component of AddUser component */}
 			<Card className={classes.input}>
@@ -56,7 +57,7 @@ const AddUser = (props) => {
 					<Button type="submit">Add User</Button>
 				</form>
 			</Card>
-		</React.Fragment>
+		</Wrapper>
 	);
 };
 
