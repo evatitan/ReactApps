@@ -1,4 +1,5 @@
 #  01.todoListApp 
+Use command "npm start" to execute react app.
 
 ## Content
 _This is a simple todoList app, I made it with the framework-React.js._
@@ -26,5 +27,11 @@ _EVATITAN_
 
 ## Tips
 
+
+
+# react function
+1. create react app ---> npx create-react-app my-app
+2. update react version ---> npm install react-script@latest
+3. run react app ---> npm satrt
 
 
