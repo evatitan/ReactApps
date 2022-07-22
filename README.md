@@ -27,11 +27,8 @@ _EVATITAN_
 
 ## Tips
 
-
-
 # react function
 1. create react app ---> npx create-react-app my-app
 2. update react version ---> npm install react-script@latest
 3. run react app ---> npm satrt
-
 
